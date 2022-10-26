@@ -2,8 +2,6 @@ import './style.scss';
 import { NavigationData } from './NavigationData';
 import NavLink from '../../components/NavLink';
 
-
-
 const Navigation = () => {
   return (
     <nav>
