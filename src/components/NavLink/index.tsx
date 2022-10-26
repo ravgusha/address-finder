@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
 
@@ -16,15 +17,21 @@ interface INavLink {
 }
 
 const NavLink = ({ item, index }: INavLink) => {
+  const [nestedList, setNestedList] = useState(false);
+
+  const showNestedList = () => setNestedList(!nestedList);
+
   return (
     <li key={index}>
       <Link to={item.path}>
         <img src={item.icon} />
         <span>{item.title}</span>
-        {item.child && <button></button>}
+        {item.child && (
+          <button className={nestedList ? 'visible' : ''} onClick={showNestedList}></button>
+        )}
       </Link>
       {item.child && (
-        <ul>
+        <ul className={nestedList ? 'visible' : ''}>
           {item.child.map((item, index) => {
             return (
               <li key={index}>
