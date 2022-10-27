@@ -1,11 +1,17 @@
+import { FormEvent } from 'react';
 import './style.scss';
 
-const SearchBox = () => {
+interface ISearchBox {
+  onSubmit: (event: FormEvent<HTMLFormElement>) => void;
+}
+
+const SearchBox = ({onSubmit}: ISearchBox) => {
+
   return (
-    <div className='searchbar'>
-      <input type="text" placeholder='Введите интересующий вас адрес'/>
-      <button>Поиск</button>
-    </div>
+    <form onSubmit={onSubmit}>
+      <input type="text" placeholder="Введите интересующий вас адрес" name="query" />
+      <button type="submit">Поиск</button>
+    </form>
   );
 };
 
