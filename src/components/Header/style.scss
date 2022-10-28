@@ -1,0 +1,25 @@
+@import '../../styles/styleConstants.scss';
+
+header {
+  color: #fff;
+  background-color: $MAIN_COLOR;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 700;
+  width: 100vw;
+
+  div {
+    display: flex;
+    align-items: center;
+
+    img {
+      padding-right: 16px;
+    }
+
+    h1 {
+      font-size: 20px;
+    }
+  }
+}
