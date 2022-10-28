@@ -1,3 +1,4 @@
+import Address from '../containers/Address';
 import Home from '../containers/Home';
 
 const routes = [
@@ -6,8 +7,8 @@ const routes = [
     component: Home,
   },
   {
-    path: '/adress',
-    component: Home,
+    path: '/address',
+    component: Address,
   },
 ];
 
