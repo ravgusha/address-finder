@@ -1,15 +1,18 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import './style.scss';
 
 interface INavLink {
   item: {
     title: string;
     path: string;
+    component: () => JSX.Element;
     icon: string;
     child?: {
       title: string;
       path: string;
+      component: () => JSX.Element;
       icon: string;
     }[];
   };
@@ -21,29 +24,29 @@ const NavLink = ({ item, index }: INavLink) => {
 
   const showNestedList = () => setNestedList(!nestedList);
 
-  return (
+  // Проверяем, есть ли вложенные роуты
+  return item.child ? (
     <li key={index}>
-      <Link to={item.path}>
-        <img src={item.icon} />
+      <button style={{ backgroundImage: `url(${item.icon})` }} className={nestedList ? 'visible' : ''} onClick={showNestedList}>
+        {item.title}
+      </button>
+      <ul className={nestedList ? 'visible' : ''}>
+        {item.child.map((item, index) => {
+          return (
+            <li key={index}>
+              <Link to={item.path} style={{ backgroundImage: `url(${item.icon})` }}>
+                <span>{item.title}</span>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </li>
+  ) : (
+    <li key={index}>
+      <Link to={item.path} style={{ backgroundImage: `url(${item.icon})` }}>
         <span>{item.title}</span>
-        {item.child && (
-          <button className={nestedList ? 'visible' : ''} onClick={showNestedList}></button>
-        )}
       </Link>
-      {item.child && (
-        <ul className={nestedList ? 'visible' : ''}>
-          {item.child.map((item, index) => {
-            return (
-              <li key={index}>
-                <Link to={item.path}>
-                  <img src={item.icon} />
-                  <span>{item.title}</span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      )}
     </li>
   );
 };

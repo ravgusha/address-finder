@@ -24,7 +24,6 @@ const Address = () => {
     instance
       .request({ data: { query: searchQuery } })
       .then((result) => {
-        console.log(result.data.suggestions);
         setSearchResults(result.data.suggestions);
       })
       .catch((error) => console.log('error', error));

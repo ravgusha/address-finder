@@ -8,7 +8,6 @@ interface IAddressList {
 }
 
 const AddressList = ({ addresses }: IAddressList) => {
-  console.log(addresses);
   return (
     <section>
       <h3>Адреса</h3>
