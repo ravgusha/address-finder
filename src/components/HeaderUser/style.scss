@@ -5,4 +5,8 @@
   img {
     margin-right: 16px;
   }
+
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
 }

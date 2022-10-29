@@ -15,7 +15,7 @@ export interface ISearchResult {
   unrestricted_value: string;
 }
 
-const Address = () => {
+const AddressPage = () => {
   const [searchResults, setSearchResults] = useState<DaDataSuggestion[]>([]);
 
   const onSubmit: React.FormEventHandler<HTMLFormElement> = (event: FormEvent<HTMLFormElement>) => {
@@ -38,4 +38,4 @@ const Address = () => {
     </main>
   );
 };
-export default Address;
+export default AddressPage;

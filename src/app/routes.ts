@@ -1,59 +1,59 @@
-import Address from '../containers/Address';
-import Home from '../containers/Home';
+import AddressPage from '../containers/AddressPage';
+import HomePage from '../containers/HomePage';
 
 export const routes = [
   {
     title: 'Главная',
     path: '/',
-    component: Home,
+    component: HomePage,
     icon: './home.svg',
   },
   {
     title: 'Поиск адресов',
     path: '/address',
-    component: Address,
+    component: AddressPage,
     icon: 'search.svg',
   },
   {
     title: 'Таблицы',
     path: '/mock-link',
-    component: Home,
+    component: HomePage,
     icon: 'tables.svg',
   },
   {
     title: 'Календарь',
     path: '/mock-link',
-    component: Home,
+    component: HomePage,
     icon: 'calendar.svg',
   },
   {
     title: 'Карты',
     path: '/mock-link',
-    component: Home,
+    component: HomePage,
     icon: 'map.svg',
   },
   {
     title: 'Виджеты',
     path: '/mock-link',
-    component: Home,
+    component: HomePage,
     icon: 'widgets.svg',
   },
   {
     title: 'Настройки',
     path: '/mock-link',
-    component: Home,
+    component: HomePage,
     icon: 'settings.svg',
     child: [
       {
         title: 'Настройки профиля',
         path: '/mock-link',
-        component: Home,
+        component: HomePage,
         icon: 'user.svg',
       },
       {
         title: 'Управление финансами',
         path: '/mock-link',
-        component: Home,
+        component: HomePage,
         icon: 'finances.svg',
       },
     ],
@@ -61,7 +61,7 @@ export const routes = [
   {
     title: 'Выход',
     path: '/mock-link',
-    component: Home,
+    component: HomePage,
     icon: 'exit.svg',
   },
 ];

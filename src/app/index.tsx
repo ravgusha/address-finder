@@ -8,7 +8,6 @@ function App() {
   return (
     <>
       <Header />
-      <Navigation />
       <Routes>
         {routes.map(({ path, component: Component }, i) => (
           <Route key={i} path={path} element={<Component />} />
