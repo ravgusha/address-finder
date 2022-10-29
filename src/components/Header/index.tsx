@@ -1,15 +1,13 @@
+import HeaderUser from '../HeaderUser';
+import Logo from '../Logo';
+
 import './style.scss';
 
 const Header = () => {
   return (
     <header>
-      <div className="logo">
-        <img src="./logo.svg"></img>
-        <h1>Wrench CRM</h1>
-      </div>
-      <div>
-      <img src="./person.svg"></img>
-      <p>Имя Фамилия</p></div>
+      <Logo />
+      <HeaderUser name="Имя Фамилия"/>
     </header>
   );
 };
