@@ -27,8 +27,12 @@ const NavLink = ({ item, index }: INavLink) => {
   // Проверяем, есть ли вложенные роуты
   return item.child ? (
     <li key={index}>
-      <button style={{ backgroundImage: `url(${item.icon})` }} className={nestedList ? 'visible' : ''} onClick={showNestedList}>
-        {item.title}
+      <button
+        style={{ backgroundImage: `url(${item.icon})` }}
+        className={nestedList ? 'visible' : ''}
+        onClick={showNestedList}
+      >
+        <span> {item.title}</span>
       </button>
       <ul className={nestedList ? 'visible' : ''}>
         {item.child.map((item, index) => {
