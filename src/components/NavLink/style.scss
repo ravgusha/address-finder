@@ -7,14 +7,17 @@ li {
   }
 
   a {
-    display: flex;
+    display: block;
     align-items: center;
     text-decoration: none;
     color: #000;
     position: relative;
-    height: 32px;
+    min-height: 32px;
     background-repeat: no-repeat;
     padding-left: 48px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-position: left;
 
     img {
       margin-right: 16px;
@@ -29,7 +32,7 @@ li {
     cursor: pointer;
     background-repeat: no-repeat;
     padding-left: 48px;
-    height: 34px;
+    min-height: 34px;
 
     &::after {
       content: '';
@@ -44,6 +47,10 @@ li {
     &.visible::after {
       transform: rotate(60deg);
       transition: transform 0.2s linear;
+    }
+
+    li a {
+      min-height: 48px;
     }
   }
 
