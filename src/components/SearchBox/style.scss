@@ -14,13 +14,23 @@ form {
 
   button {
     max-width: 217px;
-    width: 100%;
+    // width: 100%;
     border: none;
     border-radius: 10px;
     font-size: 26px;
     color: white;
-    padding-left: 50px;
+    padding: 0 20px 0 50px;
     font-weight: 700;
-    background: url('/assets/search.svg') 21% 50% no-repeat $MAIN_COLOR;
+    background: url('/assets/search.svg') 8% 50% no-repeat $MAIN_COLOR;
+
+    @media screen and (max-width: 768px) {
+      background: url('/assets/search.svg') 50% 50% no-repeat $MAIN_COLOR;
+    }
+
+    span {
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+    }
   }
 }
