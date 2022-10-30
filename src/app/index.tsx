@@ -6,6 +6,7 @@ import Navigation from '../containers/Navigation';
 import { ContextProvider } from '../context';
 
 import './style.scss';
+import NotFoundPage from '../containers/NotFoundPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           {routes.map(({ path, component: Component }, i) => (
             <Route key={i} path={path} element={<Component />} />
           ))}
+          <Route path='*' element={<NotFoundPage />}/>
         </Routes>
       </div>
     </ContextProvider>

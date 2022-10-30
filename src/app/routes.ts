@@ -1,5 +1,6 @@
 import AddressPage from '../containers/AddressPage';
 import HomePage from '../containers/HomePage';
+import NotFoundPage from '../containers/NotFoundPage';
 
 export const routes = [
   {
@@ -16,52 +17,52 @@ export const routes = [
   },
   {
     title: 'Таблицы',
-    path: '/mock-link',
-    component: HomePage,
+    path: '/tables',
+    component: NotFoundPage,
     icon: 'tables.svg',
   },
   {
     title: 'Календарь',
-    path: '/mock-link',
-    component: HomePage,
+    path: '/calendar',
+    component: NotFoundPage,
     icon: 'calendar.svg',
   },
   {
     title: 'Карты',
-    path: '/mock-link',
-    component: HomePage,
+    path: '/map',
+    component: NotFoundPage,
     icon: 'map.svg',
   },
   {
     title: 'Виджеты',
-    path: '/mock-link',
-    component: HomePage,
+    path: '/widgets',
+    component: NotFoundPage,
     icon: 'widgets.svg',
   },
   {
     title: 'Настройки',
-    path: '/mock-link',
-    component: HomePage,
+    path: '/settings',
+    component: NotFoundPage,
     icon: 'settings.svg',
     child: [
       {
         title: 'Настройки профиля',
-        path: '/mock-link',
-        component: HomePage,
+        path: '/user-settings',
+        component: NotFoundPage,
         icon: 'user.svg',
       },
       {
         title: 'Управление финансами',
-        path: '/mock-link',
-        component: HomePage,
+        path: '/finances',
+        component: NotFoundPage,
         icon: 'finances.svg',
       },
     ],
   },
   {
     title: 'Выход',
-    path: '/mock-link',
-    component: HomePage,
+    path: '/exit',
+    component: NotFoundPage,
     icon: 'exit.svg',
   },
 ];

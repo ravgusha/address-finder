@@ -12,7 +12,7 @@ const NewsItem = ({ item }: INewsItem) => {
   return (
     <article>
       <h4>{item.title}</h4>
-      <p>{item.text}</p>
+      <p dangerouslySetInnerHTML={{ __html: item.text }}></p>
     </article>
   );
 };
