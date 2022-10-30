@@ -1,29 +1,41 @@
+import { useContext, useEffect, useState } from 'react';
 import NavLink from '../../components/NavLink';
 import routes from '../../app/routes';
+import Context from '../../context';
 
 import './style.scss';
-import { useState } from 'react';
 
 const Navigation = () => {
-  const [navbarOpen, setNavbarOpen] = useState(true);
+  const [width, setWidth] = useState(window.innerWidth);
 
-  const handleToggle = () => {
-    setNavbarOpen(!navbarOpen);
-  };
+  useEffect(() => {
+    function handleResize() {
+      setWidth(window.innerWidth);
+    }
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [width]);
+
+  useEffect(() => {
+    // Держать навигацию всегда открытой при width > 768
+    width > 768 && handleNavbarToggle();
+  }, [width]);
+
+  function handleNavbarToggle() {
+    setIsNavbarOpen(true);
+  }
+
+  const { isNavbarOpen, setIsNavbarOpen } = useContext(Context);
+
   return (
-    <>
-      <button className="nav-btn" onClick={handleToggle}>
-        {navbarOpen ? 'X' : '>'}
-      </button>
-      <nav className={`nav ${navbarOpen ? '' : 'hidden'}`}>
-        <p>Меню</p>
-        <ul>
-          {routes.map((item, index) => {
-            return <NavLink item={item} index={index} key={index}></NavLink>;
-          })}
-        </ul>
-      </nav>
-    </>
+    <nav className={`nav ${isNavbarOpen ? '' : 'hidden'}`}>
+      <p>Меню</p>
+      <ul>
+        {routes.map((item, index) => {
+          return <NavLink item={item} index={index} key={index}></NavLink>;
+        })}
+      </ul>
+    </nav>
   );
 };
 

@@ -35,21 +35,3 @@ nav {
     padding: 22px;
   }
 }
-
-.nav-btn {
-  position: absolute;
-  left: 0;
-  top: 76px;
-  z-index: 10;
-  cursor: pointer;
-  border: none;
-  font-size: 22px;
-  border-radius: 0 0 10px;
-  background-color: #4f27bf;
-  color: white;
-  opacity: 0;
-
-  @media screen and (max-width: 768px) {
-    opacity: 100;
-  }
-}
