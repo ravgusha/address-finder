@@ -1,6 +1,6 @@
-# Adress Finder (Wrench CRM)
+# Wrench CRM (Adress Finder) 
 
-Wrench CRM - Crm Admin Panel in React.
+Wrench CRM - Crm Panel in React.
 ## Deploy: https://ravgusha-address-finder.netlify.app/
 ![image](https://user-images.githubusercontent.com/62184992/199074237-f561c448-c3ee-4319-8f59-da40a332d71c.png)
 ## Node.js version
