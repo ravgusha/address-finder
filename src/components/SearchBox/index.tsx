@@ -1,4 +1,5 @@
 import { FormEvent } from 'react';
+
 import './style.scss';
 
 interface ISearchBox {

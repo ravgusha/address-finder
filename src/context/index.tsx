@@ -1,9 +1,8 @@
-import React from 'react';
-import { createContext, useState } from 'react';
+import { Dispatch, ReactNode, createContext, useState, SetStateAction } from 'react';
 
 interface IDefaultValue {
   isNavbarOpen: boolean;
-  setIsNavbarOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsNavbarOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 const defaultValue: IDefaultValue = {
@@ -13,11 +12,11 @@ const defaultValue: IDefaultValue = {
 
 const Context = createContext(defaultValue);
 
-interface Props {
-  children: React.ReactNode;
+interface IContextProvider {
+  children: ReactNode;
 }
 
-export const ContextProvider = ({ children }: Props) => {
+export const ContextProvider = ({ children }: IContextProvider) => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(true);
 
   return <Context.Provider value={{ isNavbarOpen, setIsNavbarOpen }}>{children}</Context.Provider>;

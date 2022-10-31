@@ -4,9 +4,9 @@ import routes from './routes';
 import Header from '../components/Header';
 import Navigation from '../containers/Navigation';
 import { ContextProvider } from '../context';
+import NotFoundPage from '../containers/NotFoundPage';
 
 import './style.scss';
-import NotFoundPage from '../containers/NotFoundPage';
 
 function App() {
   return (

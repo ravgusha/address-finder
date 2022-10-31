@@ -1,5 +1,6 @@
-import axios from 'axios';
 import { FormEvent, useState } from 'react';
+import axios from 'axios';
+
 import AddressList from '../../components/AddressList';
 import SearchBox from '../../components/SearchBox';
 import { DaDataSuggestion } from '../../types';
